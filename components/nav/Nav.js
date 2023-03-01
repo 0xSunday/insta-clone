@@ -5,7 +5,7 @@ import Link from "next/link";
 import { AiOutlineMore } from "react-icons/ai";
 const Nav = () => {
   return (
-    <div className="  hidden sm:flex w-64 max-w-[600px] l mx-3 pt-10 pb-4 text-black  border-r-2 h-[100vh]  justify-between flex-col">
+    <div className=" fixed bg-white hidden md:flex w-64 max-w-[600px] l mx-3 pt-10 pb-4 text-black  border-r-2 h-[100vh]  justify-between flex-col">
       <div>
         <div>
           <Link href="/">

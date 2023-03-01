@@ -21,10 +21,12 @@ export default function Home() {
       </Head>
       <div className="flex flex-1 sm:px-4 ">
         <Header />
+
         <Nav />
 
         <Feed />
         <Suggestion />
+
         <NavBottem />
       </div>
     </>

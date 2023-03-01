@@ -4,7 +4,7 @@ import React from "react";
 
 const Suggestion = () => {
   return (
-    <div className="hidden  pt-10 lg:flex mr-10 w-[300px] flex-col ">
+    <div className="hidden pt-[4.3rem] xl:flex mr-10 w-[300px] flex-col ">
       <div className="flex justify-between  w-full h-16 items-center ">
         <div className="flex flex-row justify-center  gap-2">
           <Image

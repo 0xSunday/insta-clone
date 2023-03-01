@@ -14,10 +14,10 @@ const Stories = () => {
       }))
     );
   }, []);
-  console.log(stories);
+  // console.log(stories);
 
   return (
-    <div className="flex overflow-x-scroll bg-white sm:scrollbar-thin scrollbar-track-transparent  scrollbar-thumb-slate-500  ">
+    <div className="flex overflow-x-scroll bg-white sm:scrollbar-thin scrollbar-track-transparent  scrollbar-thumb-slate-500   ">
       {stories.map((p) => (
         <div
           key={p.id}

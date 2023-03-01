@@ -4,7 +4,7 @@ import { RiMessengerLine } from "react-icons/ri";
 import { AiOutlineHeart } from "react-icons/ai";
 const Header = () => {
   return (
-    <div className=" px-5 border-b-2 items-center justify-between py-2 fixed top-0 left-0 right-0 flex sm:hidden w-full   text-black  bg-white">
+    <div className=" px-5 border-b-2 items-center justify-between py-2 fixed z-20 top-0 left-0 right-0 flex md:hidden w-full   text-black  bg-white">
       <div className="flex justify-center items-center">
         <Image
           className="w-28"
