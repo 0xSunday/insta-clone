@@ -61,3 +61,41 @@ export const logoDown = [
     logo: CgProfile,
   },
 ];
+
+export const rigtData = [
+  {
+    image: "profile3.jpeg",
+    name: "Ksi",
+    data: " Followed by mrbeast + 25 more",
+  },
+  {
+    image: "profile4.jpg",
+    name: "vikkstagram",
+    data: " Followed by ksi + 28 more",
+  },
+  {
+    image: "profile5.jpg",
+    name: "miniminter",
+    data: " Followed by vikkstagram + 17 more",
+  },
+  {
+    image: "profile6.jpg",
+    name: "zerkaa",
+    data: " Followed by miniminter + 18 more",
+  },
+  {
+    image: "profile7.jpeg",
+    name: "wroetoshaw",
+    data: " Followed by zerkaa + 19 more",
+  },
+  {
+    image: "profile8.jpg",
+    name: "tobjizzle",
+    data: " Followed by wroetoshaw + 21 more",
+  },
+  {
+    image: "profile9.jpg",
+    name: "behzingagram",
+    data: " Followed by tobjizzle + 23 more",
+  },
+];
