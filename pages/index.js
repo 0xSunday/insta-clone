@@ -20,14 +20,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="flex flex-1 sm:px-4 ">
-        <Header />
-
         <Nav />
-
+        <Header />
+        <NavBottem />
+        {/* <div className="flex flex-1 justify-center "> */}
         <Feed />
         <Suggestion />
-
-        <NavBottem />
+        {/* </div> */}
       </div>
     </>
   );
