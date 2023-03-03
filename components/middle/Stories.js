@@ -14,7 +14,7 @@ const Stories = () => {
       }))
     );
   }, []);
-  console.log(stories);
+  // console.log(stories);
 
   return (
     <div className="flex overflow-x-scroll bg-white md:scrollbar-thin scrollbar-track-transparent  scrollbar-thumb-slate-500   ">

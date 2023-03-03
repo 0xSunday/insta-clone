@@ -25,7 +25,7 @@ const Nav = () => {
               <d.logo
                 size={25}
                 color="black"
-                className="hover:scale-105 transition-transform"
+                className="hover:scale-105 transition-transform duration-300 ease-out"
               />
 
               <h3
@@ -48,12 +48,6 @@ const Nav = () => {
         <h3 className="text-[17px]">More</h3>
       </div>
     </div>
-
-
-
-
-
-
   );
 };
 

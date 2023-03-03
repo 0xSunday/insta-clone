@@ -9,5 +9,14 @@ export const authOptions = {
     }),
     // ...add more providers here
   ],
+
+  pages: {
+    signIn: "/auth/signin",
+  },
+  // theme: {
+  //   logo: "https://links.papaeact.com/sq8",
+  //   brandColor: "#F13287",
+  //   colorScheme: "auto",
+  // },
 };
 export default NextAuth(authOptions);
