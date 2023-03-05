@@ -9,8 +9,13 @@ import NavBottem from "@/components/nav/NavBottem";
 import Header from "@/components/nav/Header";
 
 const inter = Inter({ subsets: ["latin"] });
-
+import { useRecoilState } from "recoil";
+import Modal from "@/components/model/Model";
+import { modalState } from "@/atoms/modalAtom";
+import UploadModal from "@/components/model/UploadModal";
 export default function Home() {
+  // const [open, setOpen] = useRecoilState(modalState);
+
   return (
     <>
       <Head>
@@ -27,6 +32,8 @@ export default function Home() {
         <Feed />
         <Suggestion />
         {/* </div> */}
+
+        <UploadModal />
       </div>
     </>
   );

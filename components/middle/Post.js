@@ -6,55 +6,35 @@ import { FaRegComment } from "react-icons/fa";
 import { FiSend } from "react-icons/fi";
 import { BiBookmark } from "react-icons/bi";
 import { BsEmojiSmile } from "react-icons/bs";
+import { useState, useEffect } from "react";
+import { collection, onSnapshot, orderBy, query } from "firebase/firestore";
+import { db } from "@/firebase";
 const Post = () => {
-  const dummyData = [
-    {
-      id: 1,
-      uploadedData: "30m",
-      userName: "suni.eth",
-      profileImg: "profile6.jpg",
-      img: "profile2.jpg",
-      caption: "this the fist post in this instagram clone made by sunil reddy",
-      likes: "14",
-    },
-    {
-      id: 1,
-      uploadedData: "30m",
-      userName: "suni.eth",
-      profileImg: "profile6.jpg",
-      img: "profile5.jpg",
-      caption: "this the fist post in this instagram clone made by sunil reddy",
-      likes: "14",
-    },
-    {
-      id: 1,
-      uploadedData: "30m",
-      userName: "suni.eth",
-      profileImg: "profile6.jpg",
-      img: "profile5.jpg",
-      caption: "this the fist post in this instagram clone made by sunil reddy",
-      likes: "14",
-    },
-    {
-      id: 1,
-      uploadedData: "30m",
-      userName: "suni.eth",
-      profileImg: "profile6.jpg",
-      img: "profile5.jpg",
-      caption: "this the fist post in this instagram clone made by sunil reddy",
-      likes: "14",
-    },
-  ];
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    () =>
+      onSnapshot(
+        query(collection(db, "posts"), orderBy("timestamp", "desc")),
+        (snapshot) => {
+          setPosts(snapshot.docs);
+        }
+      );
+  }, [db]);
+  console.log(collection(db, "posts"));
+
   const commentRef = useRef();
   const commentHandler = (e) => {
     e.preventDefault();
     const comment = commentRef.current.value;
-    console.log(comment);
+    // console.log(comment);
   };
+
   return (
     <section className="  bg-white pb-11 ">
-      {dummyData.map((p, i) => (
+      {posts.map((p, i) => (
         <div
+          key={p.id}
           className={` ${
             i === dummyData.length - dummyData.length ? "mt-0 mb-5" : "my-5"
           }   rounded-sm flex flex-col gap-2  border-b  pb-5`}
@@ -62,18 +42,22 @@ const Post = () => {
           <div className="flex items-center justify-between px-3 pt-2">
             <div className="flex items-center justify-center gap-3 ">
               <img
-                src={p.profileImg}
-                alt={p.userName}
+                src={p.data().profileImg}
+                alt={p.data().caption}
                 className="h-10 p-[1px] w-full rounded-full border-2 border-red-600 "
               />
-              <h3 className="font-semibold">{p.userName} </h3>
-              <p className="text-gray-700">{p.uploadedData}</p>
+              <h3 className="font-semibold">{p.data().username} </h3>
+              <p className="text-gray-700">30 </p>
             </div>
             <FiMoreHorizontal />
           </div>
 
           <div>
-            <img src={p.img} className="w-full h-full" alt={p.caption} />
+            <img
+              src={p.data().imge}
+              className="w-full h-full"
+              alt={p.caption}
+            />
           </div>
 
           <div className="flex items-center justify-between px-3">
@@ -98,9 +82,9 @@ const Post = () => {
               />
             </div>
           </div>
-          <div className="px-3 font-semibold">{p.likes} likes</div>
+          <div className="px-3 font-semibold">15 likes</div>
           <div className="px-3 leading-5 pr-9">
-            <span className="font-bold  ">{p.userName}</span> {p.caption}
+            <span className="font-bold  ">{p.data().username}</span> {p.caption}
           </div>
 
           <form
@@ -108,7 +92,7 @@ const Post = () => {
             className="px-3 flex items-center justify-between"
           >
             <div className="flex justify-center items-center gap-2">
-            <BsEmojiSmile/>
+              <BsEmojiSmile />
               <input
                 type="text"
                 placeholder="Add a comment..."
