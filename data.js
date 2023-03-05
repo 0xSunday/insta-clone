@@ -37,10 +37,6 @@ export const leftSideData = [
     name: "Create",
     logo: BiMessageSquareAdd,
   },
-  {
-    name: "Profile",
-    logo: CgProfile,
-  },
 ];
 export const logoDown = [
   {
@@ -57,9 +53,7 @@ export const logoDown = [
     logo: BiMoviePlay,
   },
 
-  {
-    logo: CgProfile,
-  },
+ 
 ];
 
 export const rigtData = [
@@ -99,5 +93,3 @@ export const rigtData = [
     data: " Followed by tobjizzle + 23 more",
   },
 ];
-
-
