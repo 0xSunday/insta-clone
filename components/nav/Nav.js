@@ -4,7 +4,7 @@ import { leftSideData } from "@/data";
 import Link from "next/link";
 import { AiOutlineMore } from "react-icons/ai";
 import { signIn, signOut, useSession } from "next-auth/react";
-import Modal from "../model/model";
+import Modal from "../model/Modal";
 import { modalState } from "@/atoms/modalAtom";
 import { useRecoilState } from "recoil";
 const Nav = () => {

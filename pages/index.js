@@ -10,7 +10,7 @@ import Header from "@/components/nav/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 import { useRecoilState } from "recoil";
-import Modal from "@/components/model/Model";
+import Modal from "@/components/model/Modal";
 import { modalState } from "@/atoms/modalAtom";
 import UploadModal from "@/components/model/UploadModal";
 export default function Home() {

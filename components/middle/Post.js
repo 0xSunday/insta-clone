@@ -12,17 +12,15 @@ import { db } from "@/firebase";
 const Post = () => {
   const [posts, setPosts] = useState([]);
 
-  useEffect(() => {
+  useEffect(
     () =>
       onSnapshot(
         query(collection(db, "posts"), orderBy("timestamp", "desc")),
-        (snapshot) => {
-          setPosts(snapshot.docs);
-        }
-      );
-  }, [db]);
-  console.log(collection(db, "posts"));
-
+        (snapshot) => setPosts(snapshot.docs)
+      ),
+    [db]
+  );
+  console.log(posts);
   const commentRef = useRef();
   const commentHandler = (e) => {
     e.preventDefault();
@@ -36,7 +34,7 @@ const Post = () => {
         <div
           key={p.id}
           className={` ${
-            i === dummyData.length - dummyData.length ? "mt-0 mb-5" : "my-5"
+            i === posts.length - posts.length ? "mt-0 mb-5" : "my-5"
           }   rounded-sm flex flex-col gap-2  border-b  pb-5`}
         >
           <div className="flex items-center justify-between px-3 pt-2">
@@ -46,7 +44,7 @@ const Post = () => {
                 alt={p.data().caption}
                 className="h-10 p-[1px] w-full rounded-full border-2 border-red-600 "
               />
-              <h3 className="font-semibold">{p.data().username} </h3>
+              <h3 className="font-semibold">{p.data().userName} </h3>
               <p className="text-gray-700">30 </p>
             </div>
             <FiMoreHorizontal />
@@ -54,7 +52,7 @@ const Post = () => {
 
           <div>
             <img
-              src={p.data().imge}
+              src={p.data().image}
               className="w-full h-full"
               alt={p.caption}
             />
@@ -84,7 +82,8 @@ const Post = () => {
           </div>
           <div className="px-3 font-semibold">15 likes</div>
           <div className="px-3 leading-5 pr-9">
-            <span className="font-bold  ">{p.data().username}</span> {p.caption}
+            <span className="font-bold  ">{p.data().userName}</span>{" "}
+            {p.data().caption}
           </div>
 
           <form

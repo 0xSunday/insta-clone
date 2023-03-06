@@ -2,7 +2,7 @@ import { modalState } from "@/atoms/modalAtom";
 import { logoDown } from "@/data";
 import { signOut, useSession } from "next-auth/react";
 import React from "react";
-import Modal from "../model/model";
+import Modal from "../model/Modal";
 import { useRecoilState } from "recoil";
 const NavBottem = () => {
   const { data: session } = useSession();
