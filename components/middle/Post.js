@@ -32,7 +32,7 @@ const Post = () => {
     <section className="  bg-white pb-11 ">
       {posts.map((p, i) => (
         <div
-          key={p.id}
+          key={i}
           className={` ${
             i === posts.length - posts.length ? "mt-0 mb-5" : "my-5"
           }   rounded-sm flex flex-col gap-2  border-b  pb-5`}
