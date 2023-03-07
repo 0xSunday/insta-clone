@@ -33,7 +33,7 @@ const UploadModal = () => {
       timestamp: serverTimestamp(),
     });
 
-    console.log("New doc added with ID", docRef.id);
+    // console.log("New doc added with ID", docRef.id);
 
     const imageRef = ref(storage, `posts/${docRef.id}/image`);
 

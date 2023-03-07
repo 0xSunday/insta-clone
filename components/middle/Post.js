@@ -20,7 +20,7 @@ const Post = () => {
       ),
     [db]
   );
-  console.log(posts);
+  // console.log(posts);
   const commentRef = useRef();
   const commentHandler = (e) => {
     e.preventDefault();
@@ -32,7 +32,7 @@ const Post = () => {
     <section className="  bg-white pb-11 ">
       {posts.map((p, i) => (
         <div
-      // sunil
+          // sunil
           key={i}
           className={` ${
             i === posts.length - posts.length ? "mt-0 mb-5" : "my-5"
