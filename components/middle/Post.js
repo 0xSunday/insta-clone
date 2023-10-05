@@ -11,7 +11,6 @@ import { collection, onSnapshot, orderBy, query } from "firebase/firestore";
 import { db } from "@/firebase";
 const Post = () => {
   const [posts, setPosts] = useState([]);
-
   useEffect(
     () =>
       onSnapshot(

@@ -11,7 +11,7 @@ const Nav = () => {
   const { data: session } = useSession();
   const [showModal, setShowModal] = React.useState(false);
   const [open, setOpen] = useRecoilState(modalState);
-  // console.log(session);
+  // console.log(session);  
   return (
     <div className=" fixed bg-white hidden md:flex w-64 max-w-[600px] l mx-3 pt-10 pb-4 text-black  border-r-2 h-[100vh]  justify-between flex-col">
       <div>
